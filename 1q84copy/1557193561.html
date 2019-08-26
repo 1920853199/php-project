@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>《活着》余华 - 1Q84</title>
+    <meta name="keywords" content="《活着》余华,1Q84">
+    <meta name="description" content="他们脸上的皱纹里积满了阳光和泥土，他们向我微笑时，我看到空洞的嘴里牙齿所剩无几。他们时常流出浑浊的眼泪，这倒不是因为他们时常悲伤，他们在高兴时甚至是在什么事都没有的平静时刻，也会泪流而出。然后举起和乡间泥路一样粗糙的手指，擦去眼泪，如同掸去身上的稻草。">
+</head>
+<style>
+    * {
+        font-size: 18px;
+        font-weight: normal;
+        line-height: 38px;
+    }
+    .user span a{
+        font-size: 14px;
+        text-decoration:none;
+    }
+    .user span a span{
+        font-size: 14px;
+        color: red;
+    }
+</style>
+<body style="background-image: url('/images/bg.png')">
+<div style="width: 80%;margin:50px auto">
+    <div style="border: 1px solid #CCC;padding: 20px 30px">
+        <div style="text-align: left">
+            <span>&ensp;&ensp;&ensp;&ensp;</span>
+            他们脸上的皱纹里积满了阳光和泥土，他们向我微笑时，我看到空洞的嘴里牙齿所剩无几。他们时常流出浑浊的眼泪，这倒不是因为他们时常悲伤，他们在高兴时甚至是在什么事都没有的平静时刻，也会泪流而出。然后举起和乡间泥路一样粗糙的手指，擦去眼泪，如同掸去身上的稻草。
+        </div>
+        <div style="text-align:right;padding-top: 20px">
+            —— 余华 《活着》
+        </div>
+        <div style="border-top: 1px solid #CCC;padding-top: 20px;margin-top: 20px">
+            <div style="float: right;" class="user">
+                <span><a href="javascript:;" class="like" id="1557193560">喜欢<span>(0)</span></a></span>
+                <span><a href="javascript:;">评论<span>(864)</span></a></span>
+                <span><a href="map.html" title="1Q84">站点地图</a></span>
+            </div>
+            <div style="clear: both"></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+    $(function () {
+
+        $.getJSON("json/data.json?v="+new Date().getTime(),function(data){
+            var id = $('.like').attr('id');
+            $.each(data,function(k,v){
+                if(k == id){
+                    console.log(v);
+                    $('.like span').html('('+v.like+')');
+                }
+            })
+
+        });
+
+        $('.like').click(function () {
+            var id = $(this).attr('id');
+            $.ajax({
+                url: "/like.php",
+                type:'post',
+                data:"id="+id,
+                success: function(data){
+                    data =  $.parseJSON(data)
+                    $('.like span').html('('+data.data+')');
+                }
+            });
+        });
+
+    });
+</script>
+

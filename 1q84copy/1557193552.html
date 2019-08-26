@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>《月亮与六便士》 威廉·萨默赛特·毛姆 - 1Q84</title>
+    <meta name="keywords" content="《月亮与六便士》 威廉·萨默赛特·毛姆,1Q84">
+    <meta name="description" content="世界是无情的，残酷的。我们生到人世间没有人知道为了什么，我们死后没有人知道到何处去。我们自甘卑屈。我们必须看到冷清寂寥的美妙。在生活中我们一定不要出风头、露头角，惹起命运对我们注目。让我们去寻求那些淳朴、敦厚的人的爱情吧。他们的愚昧远比我们的知识更为可贵。让我们保持着沉默，满足于自己小小的天地，像他们一样平易温顺吧。这就是生活的智慧。​​">
+</head>
+<style>
+    * {
+        font-size: 18px;
+        font-weight: normal;
+        line-height: 38px;
+    }
+    .user span a{
+        font-size: 14px;
+        text-decoration:none;
+    }
+    .user span a span{
+        font-size: 14px;
+        color: red;
+    }
+</style>
+<body style="background-image: url('/images/bg.png')">
+<div style="width: 80%;margin:50px auto">
+    <div style="border: 1px solid #CCC;padding: 20px 30px">
+        <div style="text-align: left">
+            <span>&ensp;&ensp;&ensp;&ensp;</span>世界是无情的，残酷的。我们生到人世间没有人知道为了什么，我们死后没有人知道到何处去。我们自甘卑屈。我们必须看到冷清寂寥的美妙。在生活中我们一定不要出风头、露头角，惹起命运对我们注目。让我们去寻求那些淳朴、敦厚的人的爱情吧。他们的愚昧远比我们的知识更为可贵。让我们保持着沉默，满足于自己小小的天地，像他们一样平易温顺吧。这就是生活的智慧。​​
+        </div>
+        <div style="text-align:right;padding-top: 20px">
+            —— 威廉·萨默赛特·毛姆 《月亮与六便士》
+        </div>
+        <div style="border-top: 1px solid #CCC;padding-top: 20px;margin-top: 20px">
+            <div style="float: right;" class="user">
+                <span><a href="javascript:;" class="like" id="1557193552">喜欢<span>(0)</span></a></span>
+                <span><a href="javascript:;">评论<span>(864)</span></a></span>
+                <span><a href="map.html" title="1Q84">站点地图</a></span>
+            </div>
+            <div style="clear: both"></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+    $(function () {
+
+        $.getJSON("json/data.json?v="+new Date().getTime(),function(data){
+            var id = $('.like').attr('id');
+            $.each(data,function(k,v){
+                if(k == id){
+                    console.log(v);
+                    $('.like span').html('('+v.like+')');
+                }
+            })
+
+        });
+
+        $('.like').click(function () {
+            var id = $(this).attr('id');
+            $.ajax({
+                url: "/like.php",
+                type:'post',
+                data:"id="+id,
+                success: function(data){
+                    data =  $.parseJSON(data)
+                    $('.like span').html('('+data.data+')');
+                }
+            });
+        });
+
+    });
+</script>
+

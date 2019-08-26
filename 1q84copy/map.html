@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>站点地图 - 1Q84</title>
+    <meta name="keywords" content="1Q84,《月亮与六便士》 威廉·萨默赛特·毛姆,路遥《平凡的世界》">
+    <meta name="description" content="1Q84,月亮与六便士》 威廉·萨默赛特·毛姆,路遥《平凡的世界》">
+</head>
+<style>
+    ul{
+        list-style-type: none;
+        margin:0px;
+        padding: 0px;
+    }
+    li{
+        display: block;
+        float: left;
+        padding: 5px;
+        background-color: #00acc1;
+        margin-right: 5px;
+        margin-bottom: 5px;
+    }
+    a{
+        color: #ffffff;
+        text-decoration:none;
+    }
+</style>
+<body style="background-image: url('/images/bg.png')">
+<div style="width: 80%;margin:50px auto">
+    <ul>
+        <li><a href="/" title="首页" >首页</a></li>
+        <li><a href="1557193559.html" title="月亮与六便士" >月亮与六便士</a></li>
+        <li><a href="1557193560.html" title="如果我不曾见过太阳" >如果我不曾见过太阳</a></li>
+        <li><a href="1557193563.html" title="活着" >活着</a></li>
+        <li><a href="1557193552.html" title="月亮与六便士" >月亮与六便士</a></li>
+        <li><a href="1557193558.html" title="平凡的世界" >平凡的世界</a></li>
+        <li><a href="1557193555.html" title="月亮与六便士" >月亮与六便士</a></li>
+        <li><a href="1557193553.html" title="平凡的世界" >平凡的世界</a></li>
+        <li><a href="1557193550.html" title="月亮与六便士" >月亮与六便士</a></li>
+        <li><a href="1557193551.html" title="月亮与六便士" >月亮与六便士</a></li>
+        <li><a href="1557193561.html" title="活着" >活着</a></li>
+        <li><a href="1557193554.html" title="平凡的世界" >平凡的世界</a></li>
+        <li><a href="1557193556.html" title="平凡的世界" >平凡的世界</a></li>
+        <li><a href="1557193562.html" title="活着" >活着</a></li>
+        <li><a href="1557193557.html" title="平凡的世界" >平凡的世界</a></li>
+        <li><a href="1557193571.html" title="活出生命的意义" >活出生命的意义</a></li>
+        <li><a href="1557193572.html" title="徐志摩诗文集" >徐志摩诗文集</a></li>
+        <li><a href="1557193573.html" title="假如给我三天光明" >假如给我三天光明</a></li>
+        <li><a href="1557193580.html" title="阿甘正传" >阿甘正传</a></li>
+        <li><a href="1557193581.html" title="这个杀手不太冷" >这个杀手不太冷</a></li>
+        <li><a href="1557193582.html" title="这个杀手不太冷" >这个杀手不太冷</a></li>
+
+    </ul>
+</div>
+</body>
+</html>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+
+    (function(){
+
+        //2、随机颜色
+        var li = document.querySelectorAll("li");
+        var chars = ['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'];
+        function generateMixed(n) {
+            var res = "#";
+            var id;
+            for(var i = 0; i < n ; i ++) {
+                id= Math.floor(Math.random()*16);
+                res += chars[id];
+            }
+            return res;
+        }
+
+        for(var i = 0;i < li.length;i++){
+            li[i].style.backgroundColor = generateMixed(6);
+        }
+
+    })()
+</script>
+

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>《月亮与六便士》 威廉·萨默赛特·毛姆 - 1Q84</title>
+    <meta name="keywords" content="《月亮与六便士》 威廉·萨默赛特·毛姆,1Q84">
+    <meta name="description" content="这种生活模式给人以安详亲切之感。它使人想到一条平静的小河，蜿蜒流过绿茸茸的牧场，与郁郁的树荫交相掩映，直到最后泻入烟
+波浩渺的大海中。但是大海却总是那么平静，总是沉默无言、声色不动，你会突然感到一种莫名的不安。也许这只是我自己的一种怪想法，我总觉得大多数人这样度过一生好像欠缺一点什>么。我承认这种生活的社会价值，我也看到了它的井然有序的幸福，但是我的血液里却有一种强烈的愿望，渴望一种更狂放不羁的旅途。这种安详宁静的快乐好像有一种叫我惊惧不安的东>西。我的心渴望一种更加惊险的生活。只要在我的生活中能有变迁——变迁和无法预见的刺激，我是准备踏上怪石嶙峋的山崖，奔赴暗礁遍布的海滩的。">
+</head>
+<style>
+    * {
+        font-size: 18px;
+        font-weight: normal;
+        line-height: 38px;
+    }
+    .user span a{
+        font-size: 14px;
+        text-decoration:none;
+    }
+    .user span a span{
+        font-size: 14px;
+        color: red;
+    }
+</style>
+<body style="background-image: url('/images/bg.png')">
+<div style="width: 80%;margin:50px auto">
+    <div style="border: 1px solid #CCC;padding: 20px 30px">
+        <div style="text-align: left">
+            <span>&ensp;&ensp;&ensp;&ensp;</span>这种生活模式给人以安详亲切之感。它使人想到一条平静的小河，蜿蜒流过绿茸茸的牧场，与郁郁的树荫交相掩映，直到最后泻入烟波浩渺的大海中。但是大海却总是那么平静，总是沉默无言、声色不动，你会突然感到一种莫名的不安。也许这只是我自己的一种怪想法，我总觉得大多数人这样度过一生好像欠缺一点什么。我承认这种生活的社会价值，我也看到了它的井然有序的幸福，但是我的血液里却有一种强烈的愿望，渴望一种更狂放不羁的旅途。这种安详宁静的快乐好像有一种叫我惊惧不安的东西。我的心渴望一种更加惊险的生活。只要在我的生活中能有变迁——变迁和无法预见的刺激，我是准备踏上怪石嶙峋的山崖，奔赴暗礁遍布的海滩的。
+        </div>
+        <div style="text-align:right;padding-top: 20px">
+            —— 威廉·萨默赛特·毛姆 《月亮与六便士》
+        </div>
+        <div style="border-top: 1px solid #CCC;padding-top: 20px;margin-top: 20px">
+            <div style="float: right;" class="user">
+                <span><a href="javascript:;" class="like" id="1557193559">喜欢<span>(0)</span></a></span>
+                <span><a href="javascript:;">评论<span>(864)</span></a></span>
+                <span><a href="map.html" title="1Q84">站点地图</a></span>
+            </div>
+            <div style="clear: both"></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+    $(function () {
+
+        $.getJSON("json/data.json?v="+new Date().getTime(),function(data){
+            var id = $('.like').attr('id');
+            $.each(data,function(k,v){
+                if(k == id){
+                    console.log(v);
+                    $('.like span').html('('+v.like+')');
+                }
+            })
+
+        });
+
+        $('.like').click(function () {
+            var id = $(this).attr('id');
+            $.ajax({
+                url: "/like.php",
+                type:'post',
+                data:"id="+id,
+                success: function(data){
+                    data =  $.parseJSON(data)
+                    $('.like span').html('('+data.data+')');
+                }
+            });
+        });
+
+    });
+</script>
+

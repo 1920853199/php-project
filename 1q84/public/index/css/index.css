@@ -1,0 +1,49 @@
+body{
+    background-image: url("../images/bg.png");
+}
+* {
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 38px;
+}
+.user span a{
+    font-size: 14px;
+    text-decoration:none;
+}
+.user span a span{
+    font-size: 14px;
+    color: red;
+}
+
+.review div{
+    font-size: 14px;
+}
+.review{
+    border-bottom: 1px solid #CCC;
+}
+.review div span{
+    font-size: 14px;
+}
+.form div{
+    width: 90%;
+    text-align: center;
+    margin: 20px 20px;
+}
+.form div input{
+    width: 100%;
+    padding: 5px 20px;
+}
+.form div textarea{
+    width: 100%;
+    padding: 5px 20px;
+    height: 200px;
+}
+input,textarea{
+    border:1px solid #CCC;
+    border-radius: 5px;
+    background-image: url("../images/bg.png");
+}
+.content{
+    border: 1px solid #CCC;
+    padding: 20px 50px;
+}
